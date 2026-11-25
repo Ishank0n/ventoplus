@@ -161,7 +161,7 @@ class _GardenPageState extends State<GardenPage> {
             child: Image.asset(
               imagePath,
               fit: BoxFit.contain,
-              errorBuilder: (_, __, ___) => const Icon(
+              errorBuilder: (_, _, _) => const Icon(
                 Icons.local_florist,
                 color: Color(0xFFFFE7C4),
                 size: 48,
@@ -231,7 +231,7 @@ class _GardenPageState extends State<GardenPage> {
             Image.asset(
               'assets/images/garden-wall.png',
               fit: BoxFit.fill,
-              errorBuilder: (_, __, ___) => Container(
+              errorBuilder: (_, _, _) => Container(
                 color: const Color(0xFF58351F),
                 alignment: Alignment.center,
                 child: const Text(
