@@ -1024,18 +1024,14 @@ def delete_last_session(user_id):
 @app.get("/api/users/<user_id>/techniques")
 @login_required
 def list_user_techniques(user_id):
-    """Return only techniques whose plants this user has collected."""
+    """Return all active techniques with this user's plant progress."""
     cur = db().cursor()
     user = own_user(user_id)
-
     cur.execute(
-        f"""SELECT {TECHNIQUE_COLUMNS}
-            FROM techniques
-            WHERE is_active = 1 AND plant_key IS NOT NULL
-            ORDER BY sort_order, name"""
+        f"SELECT {TECHNIQUE_COLUMNS} FROM techniques "
+        "WHERE is_active = 1 ORDER BY sort_order, name"
     )
     rows = cur.fetchall()
-
     phases = load_phases(cur, [r["id"] for r in rows])
 
     cur.execute(
@@ -1052,21 +1048,56 @@ def list_user_techniques(user_id):
         c = counts.get(r["id"])
         progress = plant_progress(c["n"] if c else 0)
         progress["last_completed_at"] = iso(c["last_completed_at"]) if c else None
-
-        # A plant is collected after at least one completed session.
-        if progress["stage"] == "not_collected":
-            continue
-
         result.append({
-            "id": r["id"],
-            "slug": r["slug"],
-            "name": r["name"],
-            "plant_key": r["plant_key"],
+            **technique_json(r, phases[r["id"]]),
             "progress": progress,
         })
 
     return jsonify(techniques=result)
 
+
+@app.get("/api/users/<user_id>/plants")
+@login_required
+def list_user_plants(user_id):
+    """Return only plants collected by this user, with their technique details."""
+    cur = db().cursor()
+    user = own_user(user_id)
+
+    cur.execute(
+        f"""SELECT {TECHNIQUE_COLUMNS}
+            FROM techniques
+            WHERE is_active = 1 AND plant_key IS NOT NULL
+            ORDER BY sort_order, name"""
+    )
+    rows = cur.fetchall()
+    phases = load_phases(cur, [r["id"] for r in rows])
+
+    cur.execute(
+        """SELECT technique_id, COUNT(*) AS n, MAX(completed_at) AS last_completed_at
+           FROM breathing_sessions
+           WHERE user_id = %s AND status = 'completed'
+           GROUP BY technique_id""",
+        (user["id"],),
+    )
+    counts = {r["technique_id"]: r for r in cur.fetchall()}
+
+    plants = []
+    for r in rows:
+        c = counts.get(r["id"])
+        completed_count = c["n"] if c else 0
+
+        # A plant is collected after at least one completed session.
+        if completed_count == 0:
+            continue
+
+        progress = plant_progress(completed_count)
+        progress["last_completed_at"] = iso(c["last_completed_at"])
+        plants.append({
+            **technique_json(r, phases[r["id"]]),
+            "progress": progress,
+        })
+
+    return jsonify(plants=plants)
 
 @app.get("/api/users/<user_id>/summary")
 @login_required
