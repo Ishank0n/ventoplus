@@ -266,8 +266,8 @@ class _StatsPageState extends State<StatsPage> with TickerProviderStateMixin {
                     const Text(
                       'Statistics',
                       style: TextStyle(
-                        fontFamily: kSerif,
-                        fontFamilyFallback: kSerifFallback,
+                        fontFamily: 'Lato',
+                        fontFamilyFallback: const ['sans-serif'],
                         fontSize: 30,
                         fontWeight: FontWeight.w800,
                         color: StatsColors.white,
@@ -560,8 +560,8 @@ class _StatCard extends StatelessWidget {
                 text: value,
                 alignment: Alignment.centerRight,
                 style: const TextStyle(
-                  fontFamily: kSerif,
-                  fontFamilyFallback: kSerifFallback,
+                  fontFamily: 'Lato',
+                  fontFamilyFallback: const ['sans-serif'],
                   fontSize: 20,
                   fontWeight: FontWeight.w800,
                   color: StatsColors.mint,
@@ -610,8 +610,8 @@ class _MiniTile extends StatelessWidget {
             text: value,
             alignment: Alignment.centerLeft,
             style: const TextStyle(
-              fontFamily: kSerif,
-              fontFamilyFallback: kSerifFallback,
+              fontFamily: 'Lato',
+              fontFamilyFallback: const ['sans-serif'],
               fontSize: 21,
               fontWeight: FontWeight.w800,
               color: StatsColors.white,

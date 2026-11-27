@@ -195,8 +195,8 @@ class _EmptyState extends StatelessWidget {
             const Text(
               'No music yet',
               style: TextStyle(
-                fontFamily: kSerif,
-                fontFamilyFallback: kSerifFallback,
+                fontFamily: 'Lato',
+                fontFamilyFallback: const ['sans-serif'],
                 fontSize: 19,
                 fontWeight: FontWeight.w800,
                 color: AppColors.white,

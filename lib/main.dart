@@ -239,7 +239,7 @@ class _GoogleLoginScreen extends StatelessWidget {
                       'Welcome to Vento+',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontFamily: 'Georgia',
+                        fontFamily: 'Lato',
                         fontSize: 29,
                         fontWeight: FontWeight.w800,
                         color: Color(0xFFF3F7F2),
@@ -364,8 +364,8 @@ class AppColors {
   static const terracotta = Color(0xFFD98B5F);
 }
 
-const String kSerif = 'Georgia';
-const List<String> kSerifFallback = ['Times New Roman', 'serif'];
+const String kSerif = 'Lato';
+const List<String> kSerifFallback = ['sans-serif'];
 
 class BreatheApp extends StatelessWidget {
   const BreatheApp({super.key});
@@ -376,6 +376,7 @@ class BreatheApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Vento+',
       theme: ThemeData(
+        fontFamily: 'Lato',
         brightness: Brightness.dark,
         scaffoldBackgroundColor: AppColors.bgBottom,
         splashFactory: NoSplash.splashFactory,
@@ -1260,8 +1261,8 @@ class _HomePageState extends State<HomePage>
                         const Text(
                           HomeData.title,
                           style: TextStyle(
-                            fontFamily: kSerif,
-                            fontFamilyFallback: kSerifFallback,
+                            fontFamily: 'Lato',
+                            fontFamilyFallback: const ['sans-serif'],
                             fontSize: 30,
                             fontWeight: FontWeight.w800,
                             color: AppColors.white,
@@ -1338,8 +1339,8 @@ class _HomePageState extends State<HomePage>
                   const Text(
                     'Techniques',
                     style: TextStyle(
-                      fontFamily: kSerif,
-                      fontFamilyFallback: kSerifFallback,
+                      fontFamily: 'Lato',
+                      fontFamilyFallback: const ['sans-serif'],
                       fontSize: 17,
                       fontWeight: FontWeight.w800,
                       color: AppColors.white,
@@ -1460,8 +1461,8 @@ class _HomePageState extends State<HomePage>
                     Text(
                       t.name,
                       style: const TextStyle(
-                        fontFamily: kSerif,
-                        fontFamilyFallback: kSerifFallback,
+                        fontFamily: 'Lato',
+                        fontFamilyFallback: const ['sans-serif'],
                         fontSize: 17,
                         fontWeight: FontWeight.w800,
                         color: AppColors.white,
@@ -1727,8 +1728,8 @@ class _Stat extends StatelessWidget {
         Text(
           value,
           style: const TextStyle(
-            fontFamily: kSerif,
-            fontFamilyFallback: kSerifFallback,
+            fontFamily: 'Lato',
+            fontFamilyFallback: const ['sans-serif'],
             fontSize: 21,
             fontWeight: FontWeight.w800,
             color: AppColors.white,
@@ -1817,8 +1818,8 @@ class PlaceholderPage extends StatelessWidget {
         child: Text(
           title,
           style: const TextStyle(
-            fontFamily: kSerif,
-            fontFamilyFallback: kSerifFallback,
+            fontFamily: 'Lato',
+            fontFamilyFallback: const ['sans-serif'],
             fontSize: 30,
             fontWeight: FontWeight.w800,
             color: AppColors.white,

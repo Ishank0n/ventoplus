@@ -172,8 +172,8 @@ class _ChooseSongsSheetState extends State<_ChooseSongsSheet> {
           const Text(
             'Choose songs',
             style: TextStyle(
-              fontFamily: kSerif,
-              fontFamilyFallback: kSerifFallback,
+              fontFamily: 'Lato',
+              fontFamilyFallback: const ['sans-serif'],
               fontSize: 20,
               fontWeight: FontWeight.w800,
               color: AppColors.white,

@@ -378,8 +378,8 @@ class _ProfilePageState extends State<ProfilePage>
                 const Text(
                   'User Profile',
                   style: TextStyle(
-                    fontFamily: kSerif,
-                    fontFamilyFallback: kSerifFallback,
+                    fontFamily: 'Lato',
+                    fontFamilyFallback: const ['sans-serif'],
                     fontSize: 28,
                     fontWeight: FontWeight.w800,
                     color: _C.white,
@@ -402,8 +402,8 @@ class _ProfilePageState extends State<ProfilePage>
                       child: Text(
                         initial,
                         style: const TextStyle(
-                          fontFamily: kSerif,
-                          fontFamilyFallback: kSerifFallback,
+                          fontFamily: 'Lato',
+                          fontFamilyFallback: const ['sans-serif'],
                           fontSize: 26,
                           fontWeight: FontWeight.w800,
                           color: _C.avatarText,
@@ -420,8 +420,8 @@ class _ProfilePageState extends State<ProfilePage>
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(
-                              fontFamily: kSerif,
-                              fontFamilyFallback: kSerifFallback,
+                              fontFamily: 'Lato',
+                              fontFamilyFallback: const ['sans-serif'],
                               fontSize: 17,
                               fontWeight: FontWeight.w800,
                               color: _C.white,
@@ -711,8 +711,8 @@ class _SheetFrame extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              fontFamily: kSerif,
-              fontFamilyFallback: kSerifFallback,
+              fontFamily: 'Lato',
+              fontFamilyFallback: const ['sans-serif'],
               fontSize: 20,
               fontWeight: FontWeight.w800,
               color: _C.white,

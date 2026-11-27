@@ -54,8 +54,8 @@ class AudioHeading extends StatelessWidget {
     return Text(
       text,
       style: const TextStyle(
-        fontFamily: kSerif,
-        fontFamilyFallback: kSerifFallback,
+        fontFamily: 'Lato',
+        fontFamilyFallback: const ['sans-serif'],
         fontSize: 15.5,
         fontWeight: FontWeight.w800,
         color: AppColors.white,
@@ -205,8 +205,8 @@ class NowPlayingCard extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
-                    fontFamily: kSerif,
-                    fontFamilyFallback: kSerifFallback,
+                    fontFamily: 'Lato',
+                    fontFamilyFallback: const ['sans-serif'],
                     fontSize: 17,
                     fontWeight: FontWeight.w800,
                     color: AppColors.white,

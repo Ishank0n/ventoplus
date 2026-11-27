@@ -111,8 +111,8 @@ class _BandScreenState extends State<BandScreen> {
                 title,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  fontFamily: kSerif,
-                  fontFamilyFallback: kSerifFallback,
+                  fontFamily: 'Lato',
+                  fontFamilyFallback: const ['sans-serif'],
                   fontSize: 26,
                   fontWeight: FontWeight.w800,
                   color: StatsColors.white,
@@ -167,7 +167,7 @@ class _BandScreenState extends State<BandScreen> {
 
 TextStyle serif(double size, {FontWeight weight = FontWeight.w700, Color? color}) =>
    TextStyle(
- fontFamily: 'Georgia',
+ fontFamily: 'Lato',
   fontSize: size,
   fontWeight: weight,
   color: color,

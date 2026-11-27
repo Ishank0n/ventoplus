@@ -96,8 +96,8 @@ class _AudioPageState extends State<AudioPage>
               child: Text(
                 'Audio',
                 style: TextStyle(
-                  fontFamily: kSerif,
-                  fontFamilyFallback: kSerifFallback,
+                  fontFamily: 'Lato',
+                  fontFamilyFallback: const ['sans-serif'],
                   fontSize: 30,
                   fontWeight: FontWeight.w800,
                   color: AppColors.white,

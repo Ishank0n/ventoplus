@@ -233,7 +233,7 @@ class _GardenPageState extends State<GardenPage> {
                 'My Garden',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'Georgia',
+                  fontFamily: 'Lato',
                   fontSize: 27,
                   fontWeight: FontWeight.bold,
                   color: Color(0xFFFFE9C8),

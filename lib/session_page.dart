@@ -486,8 +486,8 @@ import 'package:video_player/video_player.dart';
                       const Text(
                         'Choose your music',
                         style: TextStyle(
-                          fontFamily: kSerif,
-                          fontFamilyFallback: kSerifFallback,
+                          fontFamily: 'Lato',
+                          fontFamilyFallback: const ['sans-serif'],
                           fontSize: 23,
                           fontWeight: FontWeight.w800,
                           color: AppColors.white,
@@ -919,8 +919,8 @@ import 'package:video_player/video_player.dart';
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                        fontFamily: kSerif,
-                        fontFamilyFallback: kSerifFallback,
+                        fontFamily: 'Lato',
+                        fontFamilyFallback: const ['sans-serif'],
                         fontSize: 17,
                         fontWeight: FontWeight.w800,
                         color: AppColors.white,
